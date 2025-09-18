@@ -36,7 +36,7 @@ export class Home implements AfterViewInit, OnDestroy {
 
   // Centro por defecto (Santa Marta) — se sobreescribe con geoloc si está disponible
   center: google.maps.LatLngLiteral = { lat: 11.2408, lng: -74.1990 };
-  zoom = 12;
+  zoom = 8;
   mapOptions: google.maps.MapOptions = {
     mapTypeId: 'roadmap',
     zoomControl: true,
