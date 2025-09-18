@@ -14,7 +14,7 @@ import { GoogleMapsModule, GoogleMap } from '@angular/google-maps';
 })
 export class Home implements AfterViewInit, OnDestroy {
 
-  option = 'dashboard';
+  option = 'repartidores';
 
   // Loading
   loading = signal(false);
