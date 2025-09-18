@@ -1,0 +1,420 @@
+
+<main class="main">
+
+    <!-- breadcrumb -->
+    <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/01.jpg)">
+        <div class="container">
+            <!-- <h2 class="text-center">Area del administrador</h2> -->
+          
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+
+
+    <!-- user-dashboard -->
+    <div class="user-profile py-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="user-profile-sidebar">
+                        <div class="user-profile-sidebar-top">
+                            <div class="user-profile-img">
+                                <img src="https://e7.pngegg.com/pngimages/636/819/png-clipart-computer-icons-privacy-policy-admin-icon-copyright-rim.png" alt="">
+                                <button type="button" class="profile-img-btn"><i class="far fa-camera"></i></button>
+                                <input type="file" class="profile-img-file">
+                            </div>
+                            <h4>Administrador</h4>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="563c393825393816332e373b263a337835393b">[email&#160;protected]</a></p>
+                        </div>
+                        <ul class="user-profile-sidebar-list">
+                            <li><a class="active" (click)="setOption('dashboard')"><i class="far fa-gauge-high"></i> Dashboard</a></li>
+                            <li><a (click)="setOption('clientes')"><i class="far fa-user"></i>  Clientes</a></li>
+                            <li><a (click)="setOption('proveedores')"><i class="far fa-shopping-bag"></i> Proveedores</a></li>
+                            <li><a (click)="setOption('solicitudes')"><i class="far fa-clipboard-list"></i> Solicituudes de servicio</a></li>
+                            <!-- <li><a href="profile-listing.html"><i class="far fa-globe"></i> My Listing</a></li> -->
+                            <li class="profile-menu">
+                                <a href="#profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="profile-menu">
+                                    <i class="far fa-gear"></i> Ajustes <i class="far fa-angle-down profile-menu-angle"></i>
+                                </a>
+                                <div class="collapse" id="profile-menu">
+                                    <ul class="profile-menu-list">
+                                        <li><a href="flight-add.html">Categorias</a></li>
+                                      
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="far fa-sign-out"></i> Salir</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9" >
+                    <div class="user-profile-wrapper">
+                        <div class="row" [hidden]="option !== 'dashboard'">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="dashboard-widget dashboard-widget-color-1">
+                                    <div class="dashboard-widget-info">
+                                        <h1>120</h1>
+                                        <span>Clientes</span>
+                                    </div>
+                                    <div class="dashboard-widget-icon">
+                                        <i class="fal fa-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="dashboard-widget dashboard-widget-color-2">
+                                    <div class="dashboard-widget-info">
+                                        <h1>26</h1>
+                                        <span>Solicitudes de servicio</span>
+                                    </div>
+                                    <div class="dashboard-widget-icon">
+                                        <i class="fal fa-loader"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="dashboard-widget dashboard-widget-color-3">
+                                    <div class="dashboard-widget-info">
+                                        <h1>$60,050</h1>
+                                        <span>Beneficio total</span>
+                                    </div>
+                                    <div class="dashboard-widget-icon">
+                                        <i class="fal fa-sack-dollar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" [hidden]="option !== 'dashboard'">
+                            <div class="col-lg-8">
+                                <div class="user-profile-card">
+                                    <h4 class="user-profile-card-title">Sales Chart</h4>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div id="chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="user-profile-card">
+                                    <h4 class="user-profile-card-title">Notificaciones</h4>
+                                    <div class="user-notification">
+                                        <div class="user-notification-item">
+                                            <a href="#">
+                                                <div class="user-notification-icon"> 
+                                                    <i class="far fa-home"></i>
+                                                </div>
+                                                <div class="user-notification-info">
+                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
+                                                    <span>just now</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="user-notification-item">
+                                            <a href="#">
+                                                <div class="user-notification-icon"> 
+                                                    <i class="far fa-envelope"></i>
+                                                </div>
+                                                <div class="user-notification-info">
+                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
+                                                    <span>15 min ago</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="user-notification-item">
+                                            <a href="#">
+                                                <div class="user-notification-icon"> 
+                                                    <i class="far fa-heart"></i>
+                                                </div>
+                                                <div class="user-notification-info">
+                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
+                                                    <span>15 days ago</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="user-notification-item">
+                                            <a href="#">
+                                                <div class="user-notification-icon">
+                                                    <i class="far fa-comment"></i>
+                                                </div>
+                                                <div class="user-notification-info">
+                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
+                                                    <span>2 months ago</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="user-profile-card profile-booking">
+                                    <h4 class="user-profile-card-title">Solicitudes de servicio</h4>
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Booking ID</th>
+                                                    <th>Type</th>
+                                                    <th>Date</th>
+                                                    <th>Price</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>01.</td>
+                                                    <td><b>#12453</b></td>
+                                                    <td>Hotel</td>
+                                                    <td>Oct 22, 2025</td>
+                                                    <td>$11,569</td>
+                                                    <td><span class="badge badge-success">Confirmed</span></td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="far fa-eye"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>02.</td>
+                                                    <td><b>#12453</b></td>
+                                                    <td>Flight</td>
+                                                    <td>Oct 22, 2025</td>
+                                                    <td>$11,569</td>
+                                                    <td><span class="badge badge-success">Confirmed</span></td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="far fa-eye"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>03.</td>
+                                                    <td><b>#12453</b></td>
+                                                    <td>Activity</td>
+                                                    <td>Oct 22, 2025</td>
+                                                    <td>$11,569</td>
+                                                    <td><span class="badge badge-warning">Pending</span></td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="far fa-eye"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>04.</td>
+                                                    <td><b>#12453</b></td>
+                                                    <td>Car</td>
+                                                    <td>Oct 22, 2025</td>
+                                                    <td>$11,569</td>
+                                                    <td><span class="badge badge-success">Confirmed</span></td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="far fa-eye"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>05.</td>
+                                                    <td><b>#12453</b></td>
+                                                    <td>Cruise</td>
+                                                    <td>Oct 22, 2025</td>
+                                                    <td>$11,569</td>
+                                                    <td><span class="badge badge-danger">Cancel</span></td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="far fa-eye"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="option === 'clientes'">
+                            <div class="col-lg-12">
+                              <div class="table-responsive">
+                                <table class="table text-nowrap">
+                                  <thead>
+                                    <tr>
+                                      <th>Fecha</th>
+                                      <th>Cliente</th>
+                                      <th>Estado</th>
+                                      <th>Acciones</th>
+                                    </tr>
+                                  </thead>
+                          
+                                  <tbody>
+                                    <tr *ngIf="loading()">
+                                      <td colspan="4">Cargando...</td>
+                                    </tr>
+                          
+                                    <!-- ✅ trackBy: trackById (no “i”) -->
+                                    <tr *ngFor="let c of clients(); trackBy: trackById; let i = index" >
+                                      <td><h6>{{ c.created | date:'MMM d, y' }}</h6></td>
+                          
+                                      <td>
+                                        <div class="table-listing-info d-flex align-items-center">
+                                          <a href="javascript:void(0)" class="d-flex align-items-center text-reset text-decoration-none">
+                                            <!-- <img
+                                              [src]="c.avatarUrl || 'assets/img/placeholder-user.png'"
+                                              alt="avatar"
+                                              class="me-3 rounded-circle"
+                                              style="width:44px;height:44px;object-fit:cover;"
+                                              (error)="onImgError($event)"
+                                            /> -->
+                                            <div class="table-listing-content">
+                                              <h6 class="mb-0">{{ c.name || '(sin nombre)' }}</h6>
+                                              <p class="mb-0">
+                                                <i class="far fa-location-dot"></i>
+                                                {{ c.email || '(oculto)' }}
+                                              </p>
+                                              <span>{{ c.phone || '—' }}</span>
+                                            </div>
+                                          </a>
+                                        </div>
+                                      </td>
+                          
+                                      <td>
+                                        <span class="badge" 
+                                              [ngClass]="c.status === 'active' ? 'bg-success' : 'bg-warning'">
+                                          {{ c.status === 'active' ? 'Active' : 'Pending' }}
+                                        </span>
+                                      </td>
+                          
+                                      <td>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" title="Ver">
+                                          <i class="far fa-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" title="Editar">
+                                          <i class="far fa-pen"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" title="Eliminar">
+                                          <i class="far fa-trash-can"></i>
+                                        </button>
+                                      </td>
+                                    </tr>
+                          
+                                    <tr *ngIf="!loading() && clients().length === 0">
+                                      <td colspan="4">Sin resultados.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                          
+                              <!-- Paginación -->
+                              <div class="pagination-area my-3" *ngIf="totalPages() > 1">
+                                <ul class="pagination mt-0">
+                                  <li class="page-item" [class.disabled]="page() <= 1">
+                                    <a class="page-link" href="javascript:void(0)" (click)="page() > 1 && goToPage(page()-1)">
+                                      <span aria-hidden="true"><i class="far fa-angle-double-left"></i></span>
+                                    </a>
+                                  </li>
+                          
+                                  <li
+                                    class="page-item"
+                                    *ngFor="let _ of [].constructor(totalPages()); let i = index"
+                                    [class.active]="(i + 1) === page()"
+                                  >
+                                    <a class="page-link" href="javascript:void(0)" (click)="goToPage(i+1)">{{ i + 1 }}</a>
+                                  </li>
+                          
+                                  <li class="page-item" [class.disabled]="page() >= totalPages()">
+                                    <a class="page-link" href="javascript:void(0)" (click)="page() < totalPages() && goToPage(page()+1)">
+                                      <span aria-hidden="true"><i class="far fa-angle-double-right"></i></span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row" *ngIf="option === 'proveedores'">
+                            <div class="col-lg-12">
+                              <div class="table-responsive">
+                                <table class="table text-nowrap">
+                                  <thead>
+                                    <tr>
+                                      <th>Fecha</th>
+                                      <th>Proveedor</th>
+                                      <th>Estado</th>
+                                      <th>Acciones</th>
+                                    </tr>
+                                  </thead>
+                          
+                                  <tbody>
+                                    <tr *ngIf="loading()">
+                                      <td colspan="4">Cargando...</td>
+                                    </tr>
+                          
+                                    <tr *ngFor="let p of providers(); trackBy: trackById">
+                                      <td><h6>{{ p.created | date:'MMM d, y' }}</h6></td>
+                          
+                                      <td>
+                                        <div class="table-listing-info d-flex align-items-center">
+                                          <a href="javascript:void(0)" class="d-flex align-items-center text-reset text-decoration-none">
+                                            <div class="table-listing-content">
+                                              <h6 class="mb-0">{{ p.name || '(sin nombre)' }}</h6>
+                                              <p class="mb-0">
+                                                <i class="far fa-location-dot"></i>
+                                                {{ p.email || '(oculto)' }}
+                                              </p>
+                                              <span>{{ p.phone || '—' }}</span>
+                                            </div>
+                                          </a>
+                                        </div>
+                                      </td>
+                          
+                                      <td>
+                                        <span class="badge" [ngClass]="p.status === 'active' ? 'bg-success' : 'bg-warning'">
+                                            {{ p.status === 'active' ? 'Active' : 'Pending' }}
+                                          </span>
+                                          
+                                      </td>
+                                      <td>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" title="Revisar"
+                                                (click)="confirmProviderDecision(p)">
+                                          <i class="far fa-check-circle"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" title="Editar">
+                                          <i class="far fa-pen"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" title="Eliminar">
+                                          <i class="far fa-trash-can"></i>
+                                        </button>
+                                      </td>
+                                    </tr>
+                          
+                                    <tr *ngIf="!loading() && providers().length === 0">
+                                      <td colspan="4">Sin resultados.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                          
+                              <!-- Paginación -->
+                              <div class="pagination-area my-3" *ngIf="totalPages() > 1">
+                                <ul class="pagination mt-0">
+                                  <li class="page-item" [class.disabled]="page() <= 1">
+                                    <a class="page-link" href="javascript:void(0)" (click)="page() > 1 && goToPage(page()-1)">
+                                      <span aria-hidden="true"><i class="far fa-angle-double-left"></i></span>
+                                    </a>
+                                  </li>
+                          
+                                  <li class="page-item" *ngFor="let _ of [].constructor(totalPages()); let i = index"
+                                      [class.active]="(i + 1) === page()">
+                                    <a class="page-link" href="javascript:void(0)" (click)="goToPage(i+1)">{{ i + 1 }}</a>
+                                  </li>
+                          
+                                  <li class="page-item" [class.disabled]="page() >= totalPages()">
+                                    <a class="page-link" href="javascript:void(0)" (click)="page() < totalPages() && goToPage(page()+1)">
+                                      <span aria-hidden="true"><i class="far fa-angle-double-right"></i></span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- user-dashboard end -->
+
+</main>
