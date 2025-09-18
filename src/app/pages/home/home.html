@@ -30,9 +30,20 @@
                             <li><a class="active" (click)="setOption('dashboard')"><i class="far fa-gauge-high"></i> Dashboard</a></li>
                             <li><a (click)="setOption('clientes')"><i class="far fa-user"></i>  Clientes</a></li>
                             <li><a (click)="setOption('proveedores')"><i class="far fa-shopping-bag"></i> Proveedores</a></li>
+                              <li class="profile-menu ">
+                                <a href="#profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="profile-menu">
+                                    <i class="far fa-gear"></i> Repartidores <i class="far fa-angle-down profile-menu-angle"></i>
+                                </a>
+                                <div class="collapse show" id="profile-menu">
+                                    <ul class="profile-menu-list">
+                                        <li><a (click)="setOption('repartidores')">Ver todos</a></li>
+                                        <li><a style="cursor: pointer;" class="text-decoration-none" (click)="addRepartidor()">Agregar nuevo</a></li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li><a (click)="setOption('solicitudes')"><i class="far fa-clipboard-list"></i> Solicituudes de servicio</a></li>
                             <!-- <li><a href="profile-listing.html"><i class="far fa-globe"></i> My Listing</a></li> -->
-                            <li class="profile-menu">
+                            <!-- <li class="profile-menu">
                                 <a href="#profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="profile-menu">
                                     <i class="far fa-gear"></i> Ajustes <i class="far fa-angle-down profile-menu-angle"></i>
                                 </a>
@@ -42,7 +53,7 @@
                                       
                                     </ul>
                                 </div>
-                            </li>
+                            </li> -->
                             <li><a href="#"><i class="far fa-sign-out"></i> Salir</a></li>
                         </ul>
                     </div>
@@ -87,7 +98,7 @@
                         <div class="row" [hidden]="option !== 'dashboard'">
                             <div class="col-lg-8">
                                 <div class="user-profile-card">
-                                    <h4 class="user-profile-card-title">Sales Chart</h4>
+                                    <h4 class="user-profile-card-title">Frecuencia de conexiones</h4>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div id="chart"></div>
@@ -105,44 +116,12 @@
                                                     <i class="far fa-home"></i>
                                                 </div>
                                                 <div class="user-notification-info">
-                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
+                                                    <p>Your Booking <b>#345987</b> Roltak Hotel Is Confirmed!</p>
                                                     <span>just now</span>
                                                 </div>
                                             </a>
                                         </div>
-                                        <div class="user-notification-item">
-                                            <a href="#">
-                                                <div class="user-notification-icon"> 
-                                                    <i class="far fa-envelope"></i>
-                                                </div>
-                                                <div class="user-notification-info">
-                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
-                                                    <span>15 min ago</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="user-notification-item">
-                                            <a href="#">
-                                                <div class="user-notification-icon"> 
-                                                    <i class="far fa-heart"></i>
-                                                </div>
-                                                <div class="user-notification-info">
-                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
-                                                    <span>15 days ago</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="user-notification-item">
-                                            <a href="#">
-                                                <div class="user-notification-icon">
-                                                    <i class="far fa-comment"></i>
-                                                </div>
-                                                <div class="user-notification-info">
-                                                    <p>Your Booking <b>#123456</b> Roltak Hotel Is Confirmed!</p>
-                                                    <span>2 months ago</span>
-                                                </div>
-                                            </a>
-                                        </div>
+                                   
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +144,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td>01.</td>
-                                                    <td><b>#12453</b></td>
+                                                    <td><b>#345987</b></td>
                                                     <td>Hotel</td>
                                                     <td>Oct 22, 2025</td>
                                                     <td>$11,569</td>
@@ -176,7 +155,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>02.</td>
-                                                    <td><b>#12453</b></td>
+                                                    <td><b>#756221</b></td>
                                                     <td>Flight</td>
                                                     <td>Oct 22, 2025</td>
                                                     <td>$11,569</td>
@@ -187,7 +166,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>03.</td>
-                                                    <td><b>#12453</b></td>
+                                                    <td><b>#754321</b></td>
                                                     <td>Activity</td>
                                                     <td>Oct 22, 2025</td>
                                                     <td>$11,569</td>
@@ -209,7 +188,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>05.</td>
-                                                    <td><b>#12453</b></td>
+                                                    <td><b>#23434</b></td>
                                                     <td>Cruise</td>
                                                     <td>Oct 22, 2025</td>
                                                     <td>$11,569</td>
@@ -408,6 +387,88 @@
                               </div>
                             </div>
                           </div>
+
+                          <div class="row" [hidden]="option !== 'repartidores'">
+                            <div class="col-lg-9">
+                              <div class="user-profile-card">
+                                <h4 class="user-profile-card-title">Ubicación de los repartidores</h4>
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <div class="input-group mb-2">
+                                      <input id="place-input" type="text" placeholder="Buscar sitio..." class="form-control" />
+                                      <button class="btn btn-primary" type="button" (click)="goToSearch()">
+                                        <i class="far fa-location-crosshairs"></i> Ir
+                                      </button>
+                                    </div>
+                                    
+                                    <google-map
+                                      height="420px"
+                                      width="100%"
+                                      [center]="center"
+                                      [zoom]="zoom"
+                                      [options]="mapOptions">
+                          
+                                      <!-- Marcadores de repartidores -->
+                                      <ng-container *ngFor="let r of activeRepartidores; trackBy: trackById">
+                                        <map-marker
+                                          [position]="{ lat: r.lat!, lng: r.lng! }"
+                                          [title]="r.name">
+                                        </map-marker>
+                                      </ng-container>
+                                      
+                                      
+                                    </google-map>
+                          
+                                    <!-- Mensaje si no hay coordenadas -->
+                                    <div *ngIf="!loading() && !hasRepartidores()" class="text-muted mt-2">
+                                      No hay repartidores con ubicación registrada.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          
+                            <div class="col-lg-3">
+                              <div class="user-profile-card">
+                                <h4 class="user-profile-card-title">Usuarios con ubicación</h4>
+                            
+                                <div *ngIf="usersWithCoords.length === 0" class="text-muted">
+                                  Sin ubicaciones registradas.
+                                </div>
+                            
+                                <div class="user-notification" *ngIf="usersWithCoords.length > 0">
+                                  <div
+                                    class="user-notification-item"
+                                    *ngFor="let u of usersWithCoords"
+                                    (click)="centerOnUser(u)"
+                                    style="cursor:pointer">
+                            
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div>
+                                        <div class="fw-semibold">{{ u.name || '(sin nombre)' }}</div>
+                                        <div class="small text-muted">
+                                          {{ u.lat | number:'1.6-6' }}, {{ u.lng | number:'1.6-6' }}
+                                        </div>
+                                      </div>
+                            
+                                      <!-- badge base + ngClass por condición -->
+                                      <span
+                                      class="badge"
+                                      [ngClass]="{
+                                        'bg-success': isActive(u),
+                                        'bg-secondary': !isActive(u)
+                                      }">
+                                      {{ isActive(u) ? 'Activo' : 'Inactivo' }}
+                                    </span>
+                                    
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                              </div>
+                            </div>
+                          </div>
+                          
                           
                           
                     </div>
