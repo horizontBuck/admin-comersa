@@ -56,9 +56,12 @@ export class Home implements AfterViewInit, OnDestroy {
   // función para desuscribir realtime
   private unsubRealtime?: () => void;
 
-  constructor(private usersSvc: UsersService) {}
+  constructor(private usersSvc: UsersService) {
+    this.setOption('repartidores');
+  }
 
   async ngOnInit() {
+   
     // Centra cerca del admin si el navegador lo permite
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
